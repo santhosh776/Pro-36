@@ -40,7 +40,12 @@ function draw() {
   foodObj.display();
 
   //write code to read fedtime value from the database 
-  
+  fedTime=database.ref('FeedTime');
+   fedTime.on("value",function(data)
+   {
+      lastFed=data.val(); 
+   }); 
+
  
   //write code to display text lastFed time here
   if(lastfed>=12){
