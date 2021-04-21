@@ -2,9 +2,8 @@ var dog,sadDog,happyDog, database;
 var foodS,foodStock;
 var addFood;
 var foodObj;
-var feed,lastfed
 //create feed and lastFed variable here
-
+var feed,lastFed
 
 function preload(){
 sadDog=loadImage("Dog.png");
@@ -48,13 +47,18 @@ function draw() {
 
  
   //write code to display text lastFed time here
-  if(lastfed>=12){
-
-  }else if(lastfed == 0){
-    text("Last Feed : 12 AM",350,30)
-  }else{
-
-  }
+  if(lastFed>=12)
+  { 
+     text("Last Feed : "+ lastFed%12 + " PM", 350,30);
+   }
+   else if(lastFed==0)
+   { 
+     text("Last Feed : 12 AM",350,30);
+     
+   }
+   else{ 
+     text("Last Feed : "+ lastFed + " AM", 350,30);
+ }
 
   drawSprites();
 }
